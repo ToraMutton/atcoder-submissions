@@ -1,3 +1,11 @@
+use proconio::input;
+
 fn main() {
-    todo!();
+    input! {
+        s: String,
+    }
+
+    let ans = s.chars().filter(|&c| c == '1').count();
+
+    println!("{}", ans);
 }
