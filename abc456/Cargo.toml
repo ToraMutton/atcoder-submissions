@@ -1,0 +1,11 @@
+[package]
+name = "abc456"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "a"
+path = "src/a.rs"
+
+[dependencies]
+proconio = "0.4"
