@@ -2,21 +2,23 @@ use proconio::input;
 
 fn main() {
     input! {
-        s: &str,
+        s: String,
     }
-
-    let mut count = 0;
-    let len = s.len();
-
-    for i in 1..len { // 文字数
-        for j in 0..=len-i { // 先頭インデックス
-            for k in 1..=j+i { // 各ブロック判定
-                if &s[]
-            }
-        }
-    }
-
     
-
-    println!("{}", count % 998244353);
+    let s: Vec<char> = s.chars().collect();
+    let n = s.len();
+    let md: i64 = 998244353;
+    let mut ans: i64 = 0;
+    let mut run: i64 = 0;
+    
+    for i in (0..n).rev() {
+        if i + 1 < n && s[i] != s[i+1] {
+            run += 1;
+        } else {
+            run = 1;
+        }
+        ans = (ans + run) % md;
+    }
+    
+    println!("{}", ans);
 }
