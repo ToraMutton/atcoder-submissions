@@ -2,26 +2,18 @@ use proconio::input;
 
 fn main() {
     input! {
-        d1: [i64; 6],
-        d2: [i64; 6],
-        d3: [i64; 6],
+        n: usize,
+        a: [usize; n],
+        b: [usize; n],
     }
 
-    let mut count = 0;
-
-    for i in 0..=5 {
-        for j in 0..=5 {
-            for k in 0..=5 {
-                let mut arr = vec![d1[i], d2[j], d3[k]];
-                arr.sort();
-                if arr[0] == 4 && arr[0] + arr[1] + arr[2] == 15 {
-                    count += 1;
-                }
-            }
+    for i in 0..n {
+        let wc = a[i];
+        if i+1 != b[wc-1] {
+            println!("No");
+            return;
         }
     }
 
-    let ans = (count as f64) / 216.0;
-
-    println!("{}", ans);
+    println!("Yes");
 }
