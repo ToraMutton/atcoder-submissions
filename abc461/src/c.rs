@@ -2,23 +2,27 @@ use proconio::input;
 
 fn main() {
     input! {
-        s: String,
+        n: usize,
+        k: usize;
+        m: usize;
+        cm: [[i64; 2], n]
     }
-    
-    let s: Vec<char> = s.chars().collect();
-    let n = s.len();
-    let md: i64 = 998244353;
-    let mut ans: i64 = 0;
-    let mut run: i64 = 0;
-    
-    for i in (0..n).rev() {
-        if i + 1 < n && s[i] != s[i+1] {
-            run += 1;
-        } else {
-            run = 1;
+
+    let mut sum = 0;
+    let mut arr = [];
+
+    for i in 0..k {
+        let mut max = cm[0][1];
+        let mut color = cm[0][0];
+        for j in 1..n {
+            if max < cm[j][1] {
+                max = cm[j][1];
+                color = cm[j][0];
+            }
         }
-        ans = (ans + run) % md;
+        arr.push(color);
+        sum += max;
     }
     
-    println!("{}", ans);
+    
 }
