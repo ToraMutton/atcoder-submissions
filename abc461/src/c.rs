@@ -3,26 +3,44 @@ use proconio::input;
 fn main() {
     input! {
         n: usize,
-        k: usize;
-        m: usize;
-        cm: [[i64; 2], n]
+        k: usize,
+        m: usize,
+        cm: [[i64; 2]; n]
+    }
+
+    let mut color_max: Vec<i64> = vec![0; n + 1];
+    for i in 0..n {
+        let c = cm[i][0] as usize;
+        let v = cm[i][1];
+        if color_max[c] < v {
+            color_max[c] = v;
+        }
+    }
+
+    let mut rest: Vec<i64> = Vec::new();
+    for i in 0..n {
+        let c = cm[i][0] as usize;
+        let v = cm[i][1];
+        if v != color_max[c] {
+            rest.push(v);
+        }
     }
 
     let mut sum = 0;
-    let mut arr = [];
 
-    for i in 0..k {
-        let mut max = cm[0][1];
-        let mut color = cm[0][0];
-        for j in 1..n {
-            if max < cm[j][1] {
-                max = cm[j][1];
-                color = cm[j][0];
-            }
-        }
-        arr.push(color);
-        sum += max;
+    color_max.sort();
+    color_max.reverse();
+
+    for i in 0..m {
+        sum += color_max[i];
     }
-    
-    
+
+    rest.sort();
+    rest.reverse();
+
+    for i in 0..k - m {
+        sum += rest[i];
+    }
+
+    println!("{}", sum);
 }
