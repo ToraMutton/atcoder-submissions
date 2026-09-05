@@ -22,8 +22,12 @@ test-suite = "{{ manifest_dir }}/testcases/{{ bin_alias }}.yml"
 
 [template]
 src = '''
+use proconio::input;
+
 fn main() {
-    todo!();
+    input! {
+
+    }
 }
 '''
 
@@ -38,7 +42,7 @@ edition = "2018"
 #opt-level = 3
 #'''
 dependencies = '''
-#proconio = { version = "=0.3.6", features = ["derive"] }
+proconio = "=0.5.0"
 '''
 dev-dependencies = '''
 #atcoder-202004-lock = { git = "https://github.com/qryxip/atcoder-202004-lock" }
@@ -87,7 +91,7 @@ path = "./{{ contest }}"
 
 [test]
 # Toolchain for the test. (optional)
-toolchain = "1.70.0"
+toolchain = "1.89.0"
 # Profile for `cargo build`. ("dev" | "release")
 #
 # Defaults to `"dev"`.
@@ -96,7 +100,7 @@ toolchain = "1.70.0"
 [submit]
 kind = "file"
 path = "{{ src_path }}"
-language_id = "4050"
+language_id = "6088"
 #[submit]
 #kind = "command"
 #args = ["cargo", "equip", "--exclude-atcoder-crates", "--resolve-cfgs", "--remove", "docs", "--minify", "libs", "--rustfmt", "--check", "--bin", "{{ bin_name }}"]
