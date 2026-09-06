@@ -1,0 +1,46 @@
+[package]
+name = "abc474"
+version = "0.1.0"
+edition = "2018"
+
+[package.metadata.cargo-compete.bin]
+abc474-a = { alias = "a", problem = "https://atcoder.jp/contests/abc474/tasks/abc474_a" }
+abc474-b = { alias = "b", problem = "https://atcoder.jp/contests/abc474/tasks/abc474_b" }
+abc474-c = { alias = "c", problem = "https://atcoder.jp/contests/abc474/tasks/abc474_c" }
+abc474-d = { alias = "d", problem = "https://atcoder.jp/contests/abc474/tasks/abc474_d" }
+abc474-e = { alias = "e", problem = "https://atcoder.jp/contests/abc474/tasks/abc474_e" }
+abc474-f = { alias = "f", problem = "https://atcoder.jp/contests/abc474/tasks/abc474_f" }
+abc474-g = { alias = "g", problem = "https://atcoder.jp/contests/abc474/tasks/abc474_g" }
+
+[[bin]]
+name = "abc474-a"
+path = "src/bin/a.rs"
+
+[[bin]]
+name = "abc474-b"
+path = "src/bin/b.rs"
+
+[[bin]]
+name = "abc474-c"
+path = "src/bin/c.rs"
+
+[[bin]]
+name = "abc474-d"
+path = "src/bin/d.rs"
+
+[[bin]]
+name = "abc474-e"
+path = "src/bin/e.rs"
+
+[[bin]]
+name = "abc474-f"
+path = "src/bin/f.rs"
+
+[[bin]]
+name = "abc474-g"
+path = "src/bin/g.rs"
+
+[dependencies]
+proconio = "=0.5.0"
+
+[dev-dependencies]
