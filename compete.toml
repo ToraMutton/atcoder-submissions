@@ -91,7 +91,7 @@ path = "./{{ contest }}"
 
 [test]
 # Toolchain for the test. (optional)
-toolchain = "1.89.0"
+#toolchain = "1.89.0"  # rustup が無い環境なのでシステムの cargo を使う
 # Profile for `cargo build`. ("dev" | "release")
 #
 # Defaults to `"dev"`.
